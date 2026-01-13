@@ -1,0 +1,125 @@
+% enshu.sty
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{enshu}[]
+
+\RequirePackage{amsmath,amsfonts,amssymb,amsthm}
+\RequirePackage{mathtools}
+\RequirePackage{physics}
+\RequirePackage{bm}
+\RequirePackage{seqsplit}
+\RequirePackage[all, warning]{onlyamsmath}
+
+\RequirePackage{graphicx}
+\RequirePackage{xcolor}
+\RequirePackage{tikz}
+\usetikzlibrary{positioning, intersections, calc, arrows.meta, math}
+\RequirePackage{subcaption}
+\RequirePackage{here}
+\RequirePackage{geometry}
+\RequirePackage{manfnt}
+\geometry{margin=32mm}
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{algorithmic}
+% \RequirePackage{algorithm}
+\RequirePackage[ruled, vlined, linesnumbered, norelsize]{algorithm2e}
+\SetKwInput{KwInput}{Input}
+\SetKwInput{KwOutput}{Output}
+\SetKwInput{KwData}{Data}
+\SetKw{Break}{break}
+
+\newcommand{\TODO}[1]{\textcolor{red}{\bfseries [TODO: #1]}}
+% TODO を全て消化し，メモを全て削除したいとき，以下のコメントアウトを解除する
+%\renewcommand{\TODO}[1]{} 
+
+\reversemarginpar
+\newcommand{\danger}{\marginpar{\vspace{-3pt}\hfill\dbend}}
+
+\RequirePackage{listings}
+\lstset{
+    basicstyle = {\ttfamily}, 
+    frame = {tbrl},
+    breaklines = true,
+    numbers = left,
+    showspaces = false,
+    showstringspaces = false,
+    showtabs = false,
+    % keywordstyle = \color{red},
+    commentstyle = {\color[HTML]{1AB91A}},
+    identifierstyle = \color{black},
+    stringstyle = \color{brown},
+    captionpos = t 
+}
+\lstdefinestyle{ex}{
+  frame = {trbl},
+  frameround = {tttt},
+  lineskip = -0.7ex,
+  numbers = none
+}
+\lstdefinestyle{default}{
+  basicstyle=\ttfamily,
+  commentstyle = {\color[cmyk]{1,0.4,1,0}},
+  classoffset = 0,
+  keywordstyle = {\bfseries \color{magenta}},
+  keywordstyle = [2]{\bfseries \color[rgb]{1,0.55,0}},
+  keywordstyle = [3]{\bfseries \color[rgb]{0.28,0.24,0.545}},
+  keywordstyle = [4]{\bfseries \color{cyan}},
+  keywordstyle = [5]{\bfseries \color[rgb]{0,0.5,0}},
+  stringstyle = {\ttfamily \color[rgb]{0,0,1}}, 
+  breaklines=true, 
+  escapechar=\`,
+  columns=[l]{fullflexible},
+  keepspaces=true,
+  showstringspaces=false,
+  xrightmargin=0em,
+  xleftmargin=1em,
+  stepnumber=1,
+  lineskip=-0.5ex,
+  frame={lRtB},
+  frameround={nnnn},
+  numberstyle={\scriptsize},
+  numbers=left
+}
+%\lstset{style=default}
+\renewcommand{\lstlistingname}{ソースコード}
+% \lstinputlisting[language=Haskell, caption=Haskell sample code]{sample.hs}
+
+
+
+% reference
+\RequirePackage{natbib}
+
+\RequirePackage[hypertexnames=false,colorlinks=false,setpagesize=false]{hyperref}
+
+\RequirePackage{cleveref}
+\crefname{equation}{式}{式}
+\crefname{figure}{図}{図}
+\crefname{table}{表}{表}
+\crefname{algorithm}{Algorithm}{Algorithm}
+\crefname{section}{章}{章}
+\crefformat{lstlisting}{{ソースコード}#2#1#3}
+\crefrangeformat{lstlisting}{{ソースコード}#3#1#4{--}#5#2#6}
+\crefmultiformat{lstlisting}{{ソースコード}#2#1#3}{, {ソースコード}#2#1#3}{, #2#1#3}{, {ソースコード}#2#1#3}
+\crefformat{page}{#2#1#3{ページ}}
+\crefrangeformat{page}{#3#1#4{--}#5#2#6{ページ}}
+\crefmultiformat{page}{#2#1#3{ページ}}{, #2#1#3{ページ}}{, #2#1#3}{, #2#1#3{ページ}}
+\crefformat{section}{#2#1#3{章}}
+\crefrangeformat{section}{#3#1#4{--}#5#2#6{章}}
+\crefmultiformat{section}{#2#1#3{章}}{, #2#1#3{章}}{, #2#1#3}{, #2#1#3{章}}
+\crefformat{subsection}{#2#1#3{節}}
+\crefrangeformat{subsection}{#3#1#4{--}#5#2#6{節}}
+\crefmultiformat{subsection}{#2#1#3{節}}{, #2#1#3{節}}{, #2#1#3}{, #2#1#3{節}}
+\crefformat{subsubsection}{#2#1#3{節}}
+\crefrangeformat{subsubsection}{#3#1#4{--}#5#2#6{節}}
+\crefmultiformat{subsubsection}{#2#1#3{節}}{, #2#1#3{節}}{, #2#1#3}{, #2#1#3{節}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\theoremstyle{definition}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{definition}[theorem]{定義}
+\newtheorem{lemma}[theorem]{補題}
+\newtheorem{example}[theorem]{例}
+
+\endinput
